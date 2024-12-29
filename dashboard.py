@@ -17,7 +17,7 @@ os.makedirs(image_dir, exist_ok=True)
 st.set_page_config(page_title="Dinesh_dashboards !!! ",page_icon=": bar_chart:", layout="wide")
 
 st.title(":bar_chart: Dinesh_Dashboards EDA")
-st.subheader( "DATASET : prepared to only work with Sales Report")
+st.subheader( "DATASET : prepared to only work with Sales Report        *download the given file and upload for the page to work" )
 
 file_path = "Sample_Data.csv"
 with open(file_path, "rb") as file:
