@@ -1,5 +1,0 @@
-plotly
-plotly.express
-streamlit
-plotly
-pandas
