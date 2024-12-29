@@ -19,6 +19,17 @@ st.set_page_config(page_title="Dinesh_dashboards !!! ",page_icon=": bar_chart:",
 st.title(":bar_chart: Dinesh_Dashboards EDA")
 st.subheader( "DATASET : prepared to only work with Sales Report")
 
+file_path = "Sample_Data.csv"
+with open(file_path, "rb") as file:
+    file_content = file.read()
+st.download_button(
+    label="Download Sample_Data.csv",
+    data=file_content,
+    file_name="Sample_Data.csv",
+    mime="text/csv"
+)
+
+
 st.markdown('<style>div.block-container{padding-top:3rem}</style>',unsafe_allow_html=True)
 
 
@@ -205,10 +216,6 @@ with st.expander("View Data", expanded=False):
     st.write(filtered_df.iloc[:500, 1:20:2].style.background_gradient(cmap="Oranges"))
 
 
-
-# Download orginal DataSet
-csv = df.to_csv(index = False).encode('utf-8')
-st.download_button('Download Data', data = csv, file_name = "Data.csv",mime = "text/csv")
 
 # For example, saving a sales trend plot as an image
 fig1 = px.line(sales_trend, x="Order Date", y="Sales", title="Monthly Sales Trend", markers=True)
